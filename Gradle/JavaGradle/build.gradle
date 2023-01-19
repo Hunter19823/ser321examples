@@ -49,6 +49,10 @@ task runFraction(type: JavaExec) {
   classpath = sourceSets.main.runtimeClasspath
 
   main = 'Fraction'
+
+  String denom = (project.hasProperty("denom")) ? project.getProperty('denom') : 1;
+  String num = (project.hasProperty("num")) ? project.getProperty('num') : 1;
+  args(num, denom);
 }
 
 // Try:
